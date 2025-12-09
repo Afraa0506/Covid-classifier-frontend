@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #E3E3E3;
+  color: #234C6A;
+}
+
+.main-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1B3C53;
+}
+
+.container {
+  width: 500px;
+  margin: 80px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.file-input{
+  width: 95%;
+}
+
+.predict-btn{
+  width: 100%;
+}
+
+.file-input, .predict-btn {
+  display: block;
+  margin: 10px auto;
+  background: #234C6A;
+  color: #E3E3E3;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.file-input:hover, .predict-btn:hover {
+  background: #234C6A;
+  opacity: 0.85;
+}
+
+.preview-img, .gradcam-img {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  background: #eef3ff;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.confidence-bars {
+  margin-top: 15px;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.bar-container span:first-child {
+  width: 100px;
+}
+
+.bar-bg {
+  background: #ddd;
+  flex: 1;
+  margin: 0 10px;
+  height: 12px;
+  border-radius: 6px;
+}
+
+.bar-fill {
+  height: 12px;
+  background: #234C6A;
+  border-radius: 6px;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #234C6A;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
