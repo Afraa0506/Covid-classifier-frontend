@@ -26,7 +26,7 @@ export default function UploadCard() {
     formData.append("file", selectedImage);
 
     try {
-      const res = await fetch("http://localhost:8000/predict", {
+      const res = await fetch("https://covid-classifier-backend.onrender.com/", {
         method: "POST",
         body: formData,
       });
