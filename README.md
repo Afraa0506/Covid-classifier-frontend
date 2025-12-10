@@ -1,16 +1,99 @@
-# React + Vite
+# COVID-19 X-Ray Classification API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Description**
+This project provides a FastAPI backend for classifying chest X-ray images into **Covid**, **Normal**, or **Viral Pneumonia**. Built using TensorFlow, the API is deployment-ready and can be integrated with any frontend application.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+* Classifies chest X-ray images into 3 categories: Covid, Normal, Viral Pneumonia
+* Preprocessing pipeline for uploaded images
+* FastAPI endpoint for seamless integration
+* Deployment-ready code
+* Easily extendable for new datasets or additional classes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/YourUsername/Covid-classifier-backend.git
+cd Covid-classifier-backend/backend
+```
+
+2. Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+3. Activate the environment:
+
+* **Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+* **Linux / Mac:**
+
+```bash
+source venv/bin/activate
+```
+
+4. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+1. Start the FastAPI backend:
+
+```bash
+uvicorn main:app --reload
+```
+
+2. Open your browser or API client (e.g., Postman) and navigate to:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+Here you can test the `/predict` endpoint by uploading a chest X-ray image.
+
+---
+
+## API Endpoint
+
+**POST** `/predict`
+
+* **Request:** Upload a file (chest X-ray image)
+* **Response:**
+
+```json
+{
+  "prediction": "Covid",
+  "confidence": 98.56,
+  "all_probs": {
+    "Covid": 98.56,
+    "Normal": 1.23,
+    "Viral Pneumonia": 0.21
+  }
+}
+```
+
+---
+
+## Notes
+
+* The model (`covid_model.h5`) is automatically loaded on startup.
+* For large models, consider hosting the `.h5` file externally (e.g., Google Drive) and downloading during startup.
+* The code is ready to integrate with any frontend (React, Vue, etc.).
+
