@@ -87,7 +87,14 @@ Here you can test the `/predict` endpoint by uploading a chest X-ray image.
     "Viral Pneumonia": 0.21
   }
 }
+
 ```
+
+## Screenshots
+
+<img width="461" height="825" alt="image" src="https://github.com/user-attachments/assets/c7f60839-087f-44d9-9b7f-89b095deb99b" />
+<img width="460" height="832" alt="image" src="https://github.com/user-attachments/assets/8e01dd19-f451-499b-835c-6e7f4e64679e" />
+
 
 ---
 
